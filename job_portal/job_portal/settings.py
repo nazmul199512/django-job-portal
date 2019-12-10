@@ -30,10 +30,10 @@ ALLOWED_HOSTS = []
 # Email Settings
 
 
-SEND_GRID_API_KEY = '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'#'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'
+SEND_GRID_API_KEY = ''
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'nasimuzzaman'#'nazmul_95'
-EMAIL_HOST_PASSWORD = 'uvmvuneabvqhrahq1127'#'nazmul12345#' #sendgrid email
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = '' #sendgrid email
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'nazmul199512@gmail.com' #sendgrig email
