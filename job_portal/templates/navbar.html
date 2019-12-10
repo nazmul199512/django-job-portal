@@ -1,0 +1,52 @@
+{% load static %}
+
+
+
+<header class="site-navbar mt-3">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="site-logo col-6"><a href="{% url 'home' %}">Careers</a></div>
+
+      <nav class="mx-auto site-navigation">
+        <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+          <li><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
+          <li><a href="{% url 'jobs:job-listing' %}">Job Listings</a></li>
+          <li><a href="{% url 'jobs:about' %}">About</a></li>
+          <li><a href="{% url 'jobs:contact' %}">Contact</a></li>
+             <li><a href="{% url 'jobs:service' %}"> Services</a></li>
+
+
+          <li class="d-lg-none"><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+{% if user.is_authenticated %}
+      <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+        <div class="ml-auto">
+
+
+          <ul class="nav nav-tabs">
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="True" aria-expanded="false">
+      {{request.user.first_name}} {{request.user.last_name}}</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a>
+
+    </div>
+  </li>
+
+
+</ul>
+
+
+
+
+        </div>
+      </div>
+
+
+
+{% endif %}
+    </div>
+  </div>
+    </header>

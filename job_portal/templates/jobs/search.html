@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+  <!-- HOME -->
+    <section class="home-section section-hero overlay bg-image" style="background-image: url('{{ STATIC_URL }}/imgages/hero1.jpg');" id="home-section">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-12">
+            <div class="mb-5 text-center">
+                        <h1 class="text-white font-weight-bold"> Find your  job in our  career website</h1>
+
+            </div>
+            <form id="job-main-form" method="get" action="#" class="search-jobs-form">
+              <div class="row mb-5">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <input type="text"  id="title" name="title" class="form-control form-control-lg" placeholder=" Software Engineer ... ">
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                   <input    type="text" id="job_location" name="job_location" class="form-control form-control-lg" placeholder="Dhaka,Bangladesh">
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <select id="employment_status" name="employment_status" class="form-control">
+                    <option>Part Time</option>
+                    <option>Full Time</option>
+                    <option>Freelance</option>
+                  </select>
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block text-white btn-search"><span class="icon-search icon mr-2"></span>Search Job</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+<section class="site-section">
+
+  <div class="container">
+
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-7 text-center">
+            <h2 class="section-title mb-2">We have found <span class="accent">{{ jobs.count }}</span> jobs</h2>
+
+
+
+
+          </div>
+        </div>
+
+         {% for job in jobs %}
+
+        <div class="mb-5">
+
+
+          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
+            <div class="col-md-2">
+              <a  href=""><img class="img-fluid" src="{% static 'images/featured-listing-2.jpg' %}" alt="image" ></a>
+            </div>
+            <div class="col-md-4">
+              <span class="badge badge-primary px-2 py-1 mb-3">
+
+                    {{ job.employment_status }}
+
+              </span>
+              <h2><a href="{% url 'jobs:job-single' job.id %}">{{ job.title }}</a> </h2>
+              <p class="meta">Publisher: <strong>{{ job.user.first_name }} {{ job.user.last_name }}</strong> In: <strong>{{ job.category }}</strong></p>
+            </div>
+            <div class="col-md-3 text-left">
+              <h3>{{ job.job_location }}</h3>
+              <span class="meta"></span>
+            </div>
+            <div class="col-md-3 text-md-right">
+              <strong class="text-black">{{ job.Salary }}</strong>
+            </div>
+          </div>
+
+            {% endfor %}
+        </div>
+
+
+
+      </div>
+
+
+
+     </section>
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+You received a message from :
+
+{{ user }}
+
+Message
+
+{{ message }}
+
+Reply to this email
+
+{{ email }}
