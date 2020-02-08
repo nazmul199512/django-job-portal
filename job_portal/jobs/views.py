@@ -16,7 +16,7 @@ def home(request):
     jobs = JobListing.objects.all().count()
     user = User.objects.all().count()
     company_name = JobListing.objects.filter(company_name__startswith='P').count()
-    paginator = Paginator(qs, 5)  # Show 4 jobs per page
+    paginator = Paginator(qs, 5)  # Show 5 jobs per page
     page = request.GET.get('page')
     try:
         qs = paginator.page(page)
