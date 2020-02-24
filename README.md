@@ -18,9 +18,9 @@ Job portal using django
 <br/>
 
 ![](ss6.png)<br/><br/>
-
-### login page
 <br/><br/>
+### login page
+<br/>
 
 ![](SS/ss05.png)
 
