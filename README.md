@@ -1,5 +1,5 @@
 # django-job-portal
-Job portal using django
+Job portal application using django
 ## Screen Shots
 <br/>
 <br/>
