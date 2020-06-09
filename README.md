@@ -1,8 +1,7 @@
 # django-job-portal
 Job portal application using django
 ### Live : [Demo](https://job-portal-10.herokuapp.com/)
-### Used Tech Stack
-Django
+### DATABASE
 #### Local : Sqlite
 #### Live : postgresql
 
