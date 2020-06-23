@@ -1,56 +1,56 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
+{% load bootstrap %}
 
 
 {% block content %}
-<section class="home-section section-hero inner-page overlay bg-image"
-       style="background-image: url('{% static 'images/hero_1.jpg' %}');" id="home-section">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-12">
-            <div class="mb-5 text-center">
-              <h1 class="text-white font-weight-bold">Contact Us</h1>
-              <p>Find your dream jobs in our powerful career website </p>
+    <section class="home-section section-hero inner-page overlay bg-image"
+             style="background-image: url('{% static 'images/hero_1.jpg' %}');" id="home-section">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-12">
+                    <div class="mb-5 text-center">
+                        <h1 class="text-white font-weight-bold">Contact Us</h1>
+                        <p>Find your dream jobs in our powerful career website </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
 
     <section class="site-section" id="next-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <form action="/jobs/contact/" method="POST" >{% csrf_token %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <form action="/jobs/contact/" method="POST">{% csrf_token %}
 
-              {{ form|crispy}}
+                        {{ form|bootstrap }}
 
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                            </div>
+                        </div>
+
+
+                    </form>
                 </div>
-              </div>
+                <div class="col-lg-5 ml-auto">
+                    <div class="p-4 mb-3 bg-white">
+                        <p class="mb-0 font-weight-bold">Address</p>
+                        <p class="mb-4">33/7, Block D, Mirpur, Dhaka, Bangladesh</p>
 
+                        <p class="mb-0 font-weight-bold">Phone</p>
+                        <p class="mb-4"><a href="#">+88 01798128799</a></p>
 
-            </form>
-          </div>
-          <div class="col-lg-5 ml-auto">
-            <div class="p-4 mb-3 bg-white">
-              <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">33/7, Block D, Mirpur, Dhaka, Bangladesh</p>
+                        <p class="mb-0 font-weight-bold">Email Address</p>
+                        <p class="mb-0"><a href="#">nazmul199512@gmail.com</a></p>
 
-              <p class="mb-0 font-weight-bold">Phone</p>
-              <p class="mb-4"><a href="#">+88 01798128799</a></p>
-
-              <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">nazmul199512@gmail.com</a></p>
-
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
 
