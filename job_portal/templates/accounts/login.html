@@ -1,48 +1,64 @@
 {% extends 'base.html' %}
 
-{% load crispy_forms_tags %}
+{% load bootstrap %}
 
 
 {% block content %}
-<section class="home-section section-hero inner-page overlay bg-image"
-      style="background-image: url('images/hero_1.jpg');" id="home-section">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-12">
-            <div class="mb-5 text-center">
+    <section class="home-section section-hero inner-page overlay bg-image"
+             style="background-image: url('images/hero_1.jpg');" id="home-section">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-12">
+                    <div class="mb-5 text-center">
 
-                 <h2 class="text-white font-weight-bold">LOGIN</h2>
+                        <h2 class="text-white font-weight-bold">LOGIN</h2>
 
 
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
 
     <section class="site-section" id="next-section">
-      <div class="container">
-        <div class="row">
+        <div class="container">
+            <div class="row justify-content-center">
 
-          <div class="col-lg-6 mb-5 mb-lg-0">
-              <p>Already  have our account?</p>
-            <form action="" method="POST" >{% csrf_token %}
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <p>Already have your account?</p>
+                    <form action="" method="POST">{% csrf_token %}
 
-              {{ form|crispy}}
+                        {{ form|bootstrap }}
 
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Login" class="btn btn-primary btn-md text-white">
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="Login" class="btn btn-primary btn-md text-white">
+                            </div>
+                        </div>
+
+
+                    </form>
                 </div>
-              </div>
 
-
-            </form>
-          </div>
-
+            </div>
         </div>
-      </div>
+    </section>
+    <section class="py-5 bg-image overlay-primary fixed overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h2 class="text-white">Looking For A Job?</h2>
+                    <p class="mb-0 text-white lead">Lorem ipsum dolor sit amet consectetur adipisicing elit tempora
+                        adipisci
+                        impedit.</p>
+                    </p>
+                </div>
+                <div class="col-md-3 ml-auto">
+                    <a href="{% url 'accounts:signup' %}" class="btn btn-warning btn-block btn-lg">Sign Up</a>
+                </div>
+            </div>
+        </div>
     </section>
 
 
