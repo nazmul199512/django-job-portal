@@ -4,20 +4,20 @@
 
 {% block content %}
 
-<section class="home-section section-hero inner-page overlay bg-image"
-          style="background-image: url('{% static 'images/hero_1.jpg' %}');"
-      id="home-section">
+    <section class="home-section section-hero inner-page overlay bg-image"
+             style="background-image: url('{% static 'images/hero_1.jpg' %}');"
+             id="home-section">
 
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-12">
-            <div class="mb-5 text-center">
-              <h1 class="text-white font-weight-bold">Job Listings</h1>
-              <p>Find your dream jobs in our powerful career website.</p>
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-12">
+                    <div class="mb-5 text-center">
+                        <h1 class="text-white font-weight-bold">Job Listings</h1>
+                        <p>Find your dream jobs in our powerful career website.</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
 
 
     </section>
@@ -26,82 +26,81 @@
 
 
 
-<section class="site-section">
-      <div class="container">
+    <section class="site-section">
+        <div class="container">
 
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2">{{ job_qs }} Job Listed</h2>
+            <div class="row mb-5 justify-content-center">
+                <div class="col-md-7 text-center">
+                    <h2 class="section-title mb-2">{{ job_qs }} Job Listed</h2>
 
-              <div class="mb-5 text-center">
+                    <div class="mb-5 text-center">
 
-                  <a  href="{% url 'jobs:job-post' %}" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
+                        <a href="{% url 'jobs:job-post' %}"
+                           class="btn btn-primary border-width-2 d-none d-lg-inline-block">
                       <span class="mr-2 icon-paper-plane">
 
                       </span>Post a Job</a>
 
 
+                    </div>
+
+
+                </div>
             </div>
 
 
-          </div>
-        </div>
+            <div class="mb-5">
+                {% for q in query %}
 
-
-
-        <div class="mb-5">
-             {% for q in query %}
-
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a  href=""><img class="img-fluid" src="{% static 'images/featured-listing-2.jpg' %}" alt="image" ></a>
-            </div>
-            <div class="col-md-4">
+                    <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
+                        <div class="col-md-2">
+                            <a href=""><img class="img-fluid" src="{% static 'images/featured-listing-2.jpg' %}"
+                                            alt="image"></a>
+                        </div>
+                        <div class="col-md-4">
               <span class="badge badge-primary px-2 py-1 mb-3">
 
                     {{ q.employment_status }}
 
               </span>
-              <h2><a href="{% url 'jobs:job-single' q.id %}">{{ q.title }}</a> </h2>
-              <p class="meta">Publisher: <strong>{{ q.user.first_name }} {{ q.user.last_name }}</strong> In: <strong>{{ q.category }}</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>{{ q.job_location }}</h3>
-              <span class="meta"></span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">{{ q.Salary }}</strong>
-            </div>
-          </div>
+                            <h2><a href="{% url 'jobs:job-single' q.id %}">{{ q.title }}</a></h2>
 
-            {% endfor %}
+                            In: <strong>{{ q.category }}</strong></p>
+                        </div>
+                        <div class="col-md-3 text-left">
+                            <h3>{{ q.job_location }}</h3>
+                            <span class="meta"></span>
+                        </div>
+                        <div class="col-md-3 text-md-right">
+                            <strong class="text-black">{{ q.Salary }}</strong>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+
+
+            <div class="row pagination-wrap">
+
+                <div class="col-md-6 text-center text-md-left">
+                    <div class="custom-pagination ml-auto">
+                        {% if query.has_previous %}
+                            <a href="?page={{ query.previous_page_number }}" class="prev">Previous</a>
+                        {% endif %}
+                        <div class="d-inline-block">
+                            Page <a href="#" class="active">{{ query.number }}</a> of {{ query.paginator.num_pages }}
+
+
+                        </div>
+                        {% if query.has_next %}
+                            <a href="?page={{ query.next_page_number }}" class="next">Next</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-
-
-        <div class="row pagination-wrap">
-
-          <div class="col-md-6 text-center text-md-left">
-            <div class="custom-pagination ml-auto">
-              {% if query.has_previous %}
-              <a  href="?page={{ query.previous_page_number }}" class="prev">Previous</a>
-              {% endif %}
-              <div class="d-inline-block">
-                Page <a href="#" class="active">{{ query.number }}</a> of  {{ query.paginator.num_pages }}
-
-
-              </div>
-              {% if query.has_next %}
-              <a href="?page={{ query.next_page_number }}" class="next">Next</a>
-               {% endif %}
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-      </div>
     </section>
 
 
