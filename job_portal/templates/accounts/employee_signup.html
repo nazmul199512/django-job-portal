@@ -1,59 +1,59 @@
 {% extends 'base.html' %}
 
-{% load crispy_forms_tags %}
-{% load  static %}
+{% load bootstrap %}
+{% load static %}
 
 {% block content %}
-<section class="home-section section-hero inner-page overlay bg-image"
-      style="background-image: url('images/hero_1.jpg');" id="home-section">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-12">
-            <div class="mb-5 text-center">
+    <section class="home-section section-hero inner-page overlay bg-image"
+             style="background-image: url('images/hero_1.jpg');" id="home-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="mb-5 text-center">
 
-                 <h2 class="text-white font-weight-bold">Not our registered yet?</h2>
-                <p>If you have any questions, please feel free to contact us,
-                    our customer service center is working for you 24/7.</p>
+                        <h2 class="text-white font-weight-bold">Not our registered yet?</h2>
+                        <p>If you have any questions, please feel free to contact us,
+                            our customer service center is working for you 24/7.</p>
 
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
 
     <section class="site-section" id="next-section">
-      <div class="container">
-          <div class="col-lg-6 mb-5 mb-lg-0">
-         <center><h1 class="lead">Sign Up</h1></center>
-               </div>
-        <div class="row">
+        <div class="container">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <center><h1 class="lead">Sign Up</h1></center>
+            </div>
+            <div class="row">
 
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <form action="/accounts/signup/" method="POST" >{% csrf_token %}
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <form action="/accounts/signup/" method="POST">{% csrf_token %}
 
-              {{ form|crispy}}
+                        {{ form|bootstrap }}
 
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Sign Up" class="btn btn-primary btn-md text-white">
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="Sign Up" class="btn btn-primary btn-md text-white">
+                            </div>
+                        </div>
+
+
+                    </form>
                 </div>
-              </div>
 
+                <div class="col-lg-5 ml-auto">
+                    <div class="p-4 mb-3 bg-white">
 
-            </form>
-          </div>
+                        <img src="{% static 'images/sq_img_3.jpg' %}" alt="Image" class="img-fluid mb-4 rounded">
 
-            <div class="col-lg-5 ml-auto">
-            <div class="p-4 mb-3 bg-white">
-
-                <img src="{% static 'images/sq_img_3.jpg' %}" alt="Image" class="img-fluid mb-4 rounded">
+                    </div>
+                </div>
 
             </div>
-          </div>
-
         </div>
-      </div>
     </section>
 
 
