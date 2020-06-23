@@ -1,33 +1,41 @@
 {% extends 'base.html' %}
 
-{% load crispy_forms_tags  %}
+{% load bootstrap %}
 
 {% block content %}
 
     <section class="site-section" id="next-section">
-      <div class="container">
+        <div class="container">
 
-        <div class="row">
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <center><h1 class="lead">Apply for this job And Check your Email</h1></center>
-            <form action="" method="POST" class="">{% csrf_token %}
 
-              {{ form|crispy }}
+            <div class="row justify-content-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <center><h1 class="lead">Apply for job </h1></center>
+                    <form action="" method="POST" class="" enctype="multipart/form-data">{% csrf_token %}
 
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="POST" class="btn btn-primary btn-md text-white">
+                        {{ form|bootstrap }}
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input type="submit" onclick="myFunction()" value="Submit"
+                                       class="btn btn-primary btn-md text-white">
+                            </div>
+                        </div>
+
+
+                    </form>
+                    <script>
+                        function myFunction() {
+                            alert("Are you applying to this job?");
+                        }
+                    </script>
+
                 </div>
-              </div>
-
-            </form>
-          </div>
 
 
+            </div>
 
         </div>
-
-      </div>
     </section>
 
 
