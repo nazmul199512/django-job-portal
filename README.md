@@ -24,7 +24,7 @@ Job portal application using django
 
 ![](ss6.png)<br/><br/>
 <br/><br/>
-### login page
+
 <br/>
 
 ![](SS/ss05.png)
