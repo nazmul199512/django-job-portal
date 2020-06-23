@@ -3,6 +3,11 @@ from .models import *
 
 
 class ContactForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(ContactForm, self).__init__(*args, **kwargs)
+        self.fields['Email'].widget.attrs['placeholder'] = 'Enter a valid E-mail'
+
     class Meta:
         model = Contact
         fields = [
@@ -34,6 +39,9 @@ class JobListingForm(forms.ModelForm):
 class JobApplyForm(forms.ModelForm):
     class Meta:
         model = ApplyJob
-        fields = [
-            'name', 'email'
-        ]
+        fields = '__all__'
+        labels = {
+            "file": "CV (pdf format)",
+            "name": "Full Name"
+
+        }
