@@ -5,6 +5,8 @@ Job portal application using django
 #### Local : Sqlite
 #### Live : postgresql
 
+[![HitCount](http://hits.dwyl.com/{nazmul199512}/{django-job-portal}.svg)](http://hits.dwyl.com/{nazmul199512}/{django-job-portal})
+
 ## Screen Shots
 <br/>
 <br/>
