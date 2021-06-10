@@ -1,5 +1,5 @@
 dj-database-url==0.5.0
-Django==2.0
+Django==2.2.24
 django-bootstrap-form==3.4
 django-crispy-forms==1.8.1
 django-forms-bootstrap==2.0.3.post2
